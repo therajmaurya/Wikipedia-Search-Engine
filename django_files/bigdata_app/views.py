@@ -4,10 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from .login import mylogin
 from .home import myhome
-import os
 import subprocess
-import requests, json, pprint, textwrap
-
+import os
 
 
 def login(request):
@@ -30,14 +28,13 @@ def bigdatajob(request):
     form2 = myhome(request.POST or None)
     if request.POST:
         if form2.is_valid():
-            text = form2.cleaned_data["text"]
             #os.system("e:")
             #os.system(r"cd \files\apache_spark")
-            #cmd = subprocess.Popen(["spark-submit", "TF-IDF.py", text], shell=True, stdin=subprocess.PIPE,
-            #                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            cmd = subprocess.Popen(["spark-submit", "TF-IDF.py", text], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, stdin=subprocess.PIPE)
-            output = cmd.communicate()[0]
+            cmd = subprocess.Popen(["spark-submit", "TF-IDF.py"], shell=True, stdin=subprocess.PIPE,
+                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            output = cmd.communicate()
             #output = "Testing Script Run!!"
+            text = form2.cleaned_data["text"]
 
             return HttpResponse(output)
     return render(request, "bigdata_app/home.html", {"form": form2})
