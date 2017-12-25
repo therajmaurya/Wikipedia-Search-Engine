@@ -8,7 +8,7 @@ list = sys.argv
 st = str(list[1])
 wo = st.lower().split()
 
-conf = SparkConf().setMaster("local").setAppName("BigWar")
+conf = SparkConf().setMaster("local").setAppName("MySearchEngine")
 sc = SparkContext(conf=conf)
 rawData = sc.textFile("wikipedia_data.tsv")
 fields = rawData.map(lambda x: x.split("\t"))
@@ -43,7 +43,7 @@ for i in range(len(wo)):
 dn = []
 for z in documentNames.toLocalIterator():
     dn.append(z)
-zipp =0 map(lambda x, y: (x, y), dn, b)
+zipp = map(lambda x, y: (x, y), dn, b)
 zipp.sort(key=lambda tup: tup[1], reverse=True)
 print("Best document for " + st + " is:")
 print(zipp[0])

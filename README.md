@@ -3,7 +3,7 @@
 ### Project Links:
 
 * [Video Demonstration](https://www.youtube.com/channel/UCNOyIJ7iLjOtitioMIes9EA)
-* [Live Project ](https://127.0.0.1:8000/bigdatajob) (Temporary Hosting, May not be active now!)
+* [Live Project ](https://32.214.254.199/bigdatajob) (Temporary Hosting, May not be active now!)
 
 ## Pre-Requisites:
 
@@ -14,6 +14,8 @@
 * Install Django and Setup Virtual Environment of Python3 [(Installation)](https://docs.djangoproject.com/en/2.0/topics/install/) [(Windows)](https://docs.djangoproject.com/en/2.0/howto/windows/)
 
 * Preferably use PyCharm or Atom IDE [(PyCharm Configuration)](https://www.jetbrains.com/help/pycharm/requirements-installation-and-launching.html)
+
+* Python 2  [(Installation)](https://www.python.org/download/releases/2.7.2/)
 
 ## STEPS:
 
