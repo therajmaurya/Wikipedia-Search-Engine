@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Big Data Job</title>
+</head>
+<body>
+    <p style="text-align: right"><a href="{% url 'logout' %}">Logout!</a></p>
+    <br><br>
+    <center>
+        <h2>
+            Hi, Welcome to Wikipedia Search Engine!!
+        </h2>
+        <h4>
+            Click on 'Run Script' button to get the results.
+        </h4>
+
+        <br><br><br>
+
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.text }}<br><br>
+            <input type="submit" name="submit" value="Run Script">
+        </form>
+    <center>
+</body>
+</html>
